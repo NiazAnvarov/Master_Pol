@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8ce3cfb825a4171acb5024dcc40dc97" Name="Diagram1">
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Employee" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Material" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Material_Type" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.MaterialCountHistory" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Partner" Width="1.5" PointX="8.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Partner_Product" Width="1.5" PointX="10.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Partner_type" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.PartnerSaleHistory" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.PointSale" Width="1.5" PointX="10.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Product" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.ProductCountHistory" Width="1.5" PointX="10.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.ProductMinCostHistory" Width="1.5" PointX="10.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.ProductType" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Role" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Supllier" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Anvarov_master_polModel.Suplly" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Partner_Product_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Suplly_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Material_Material_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_MaterialCountHistory_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Suplly_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Partner_Partner_type" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Partner_Product_Partner" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_PartnerSaleHistory_Partner" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Partner_Product_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_ProductCostHistory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_ProductCountHistory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.FK_Suplly_Supllier" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.MaterialProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="Anvarov_master_polModel.PartnerPointSale" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
