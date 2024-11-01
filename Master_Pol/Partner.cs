@@ -11,6 +11,7 @@ namespace Master_Pol
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Windows.Media;
 
     public partial class Partner
@@ -38,7 +39,7 @@ namespace Master_Pol
         public string Partner_Phone { get; set; }
         public string Partner_Email { get; set; }
         public string Partner_Logo { get; set; }
-        public int Partner_Rating { get; set; }
+        public decimal Partner_Rating { get; set; }
     
 
         public virtual Partner_type Partner_type1 { get; set; }
@@ -50,11 +51,46 @@ namespace Master_Pol
         public virtual ICollection<PointSale> PointSale { get; set; }
 
 
-        public string PartnerDiscount
+        private int PartnerDiscount
         {
             get
             {
-                List<int> 
+                
+                decimal PartnerProdQuantity = Anvarov_master_polEntities.GetContext().Partner_Product.Where(p => p.Partner == ID_Partner).Sum(p=> p.QuantityProduction);
+
+                if(PartnerProdQuantity >= 10000 && PartnerProdQuantity < 50000)
+                {
+                    return 5;
+                }
+                else if(PartnerProdQuantity >= 50000 && PartnerProdQuantity < 300000)
+                {
+                    return 10;
+                }
+                else if(PartnerProdQuantity >= 300000)
+                {
+                    return 15;
+                }
+                else
+                {
+                    return 0;
+                }
+              
+
+            }
+        }
+
+        public string PartnerDiscountDisplay
+        {
+            get
+            {
+                if(PartnerDiscount == 0)
+                {
+                    return "";
+                }
+                else
+                {
+                    return PartnerDiscount.ToString() + "%";
+                }
             }
         }
 

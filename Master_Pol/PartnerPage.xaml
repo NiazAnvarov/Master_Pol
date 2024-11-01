@@ -26,7 +26,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="700"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
@@ -36,14 +36,20 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                            <TextBlock Text="Тип"/>
-                            <TextBlock Text=" | "/>
-                            <TextBlock Text="{Binding Partner_Name}"/>
-                        </StackPanel>
+                        <TextBlock Grid.Row="0" Grid.Column="0">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} | {1}">
+                                    <Binding Path="PType"/>
+                                    <Binding Path="Partner_Name"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+ 
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                             <TextBlock Text="{Binding Director_Surname}"/>
+                            <TextBlock Text=" "/>
                             <TextBlock Text="{Binding Director_Firstname}"/>
+                            <TextBlock Text=" "/>
                             <TextBlock Text="{Binding Director_Patronymic}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
@@ -52,7 +58,10 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
                             <TextBlock Text="Рейтинг: "/>
-                            <TextBlock Text="{Binding Partner_Rating}"/>
+                            <TextBlock Text="{Binding Partner_Rating, StringFormat={}{0:0}}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
+                            <TextBlock Text="{Binding PartnerDiscountDisplay}"/>
                         </StackPanel>
 
 

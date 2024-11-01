@@ -25,7 +25,7 @@ namespace Master_Pol
             InitializeComponent();
 
             List<Partner> currentPartners = Anvarov_master_polEntities.GetContext().Partner.ToList();
-
+            
             PartnerListView.ItemsSource = currentPartners;
 
         }
