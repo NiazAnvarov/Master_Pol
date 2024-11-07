@@ -15,12 +15,16 @@ namespace Master_Pol
     
     public partial class Anvarov_master_polEntities : DbContext
     {
+        public Anvarov_master_polEntities()
+            : base("name=Anvarov_master_polEntities")
+        {
+        }
 
         private static Anvarov_master_polEntities _context;
 
         public static Anvarov_master_polEntities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
             {
                 _context = new Anvarov_master_polEntities();
             }
@@ -28,14 +32,6 @@ namespace Master_Pol
             return _context;
         }
 
-        public Anvarov_master_polEntities()
-            : base("name=Anvarov_master_polEntities")
-        {
-        }
-
-        
-
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

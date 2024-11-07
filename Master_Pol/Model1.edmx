@@ -88,7 +88,7 @@
           <Property Name="Partner_Phone" Type="nchar" MaxLength="13" Nullable="false" />
           <Property Name="Partner_Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Partner_Logo" Type="nvarchar(max)" />
-          <Property Name="Partner_Rating" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Partner_Rating" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Partner_Product">
           <Key>
@@ -609,7 +609,7 @@
           <Property Name="Partner_Phone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Partner_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Partner_Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Partner_Rating" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Partner_Rating" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Partner_type1" Relationship="Self.FK_Partner_Partner_type" FromRole="Partner" ToRole="Partner_type" />
           <NavigationProperty Name="Partner_Product" Relationship="Self.FK_Partner_Product_Partner" FromRole="Partner" ToRole="Partner_Product" />
           <NavigationProperty Name="PartnerSaleHistory" Relationship="Self.FK_PartnerSaleHistory_Partner" FromRole="Partner" ToRole="PartnerSaleHistory" />

@@ -8,5 +8,12 @@
             <Setter Property="FontFamily" Value="Segoe UI"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF67BA80"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

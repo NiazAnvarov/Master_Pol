@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Master_Pol"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="1150" MinHeight="700" MinWidth="1150">
     <Grid Background="#FFF4E8D3">
         <Grid.RowDefinitions>
             <RowDefinition Height="150"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Image Source="images/Мастер пол.png" Grid.Row="0" HorizontalAlignment="Left" Margin="10"/>
 
         <TextBlock Text="Мастер Пол" FontFamily="Segoe UI" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Button Content="Назад" Name="BtnBack" Width="100" Height="40" Margin="10" HorizontalAlignment="Right" Click="BtnBack_Click"/>
+        
+        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>
