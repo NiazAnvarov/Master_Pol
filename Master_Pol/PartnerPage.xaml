@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Master_Pol"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PartnerPage" FontFamily="Segoe UI">
+      Title="PartnerPage" FontFamily="Segoe UI" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>

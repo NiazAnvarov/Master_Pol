@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a83813b45f5b42bb8f29326051a8bb14" Name="Diagram1">
+      <Diagram DiagramId="5bdf0c793c1c479298dfd5fe60e01c03" Name="Diagram1">
         <EntityTypeShape EntityType="Anvarov_master_polModel.Employee" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Anvarov_master_polModel.Material" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Anvarov_master_polModel.Material_Type" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />

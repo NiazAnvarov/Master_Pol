@@ -39,5 +39,12 @@ namespace Master_Pol
         {
             Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Partner));
         }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var currentPartners = Anvarov_master_polEntities.GetContext().Partner.ToList();
+
+            PartnerListView.ItemsSource = currentPartners;
+        }
     }
 }

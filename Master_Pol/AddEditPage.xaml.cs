@@ -88,7 +88,7 @@ namespace Master_Pol
                 return;
             }
 
-            currentPartner.Partner_Type = PartnerTypeComboBox.SelectedIndex - 1;
+            currentPartner.Partner_Type = PartnerTypeComboBox.SelectedIndex + 1;
 
             var allPartner = Anvarov_master_polEntities.GetContext().Partner.ToList();
             allPartner = allPartner.Where(p => p.Partner_Name == currentPartner.Partner_Name).ToList();
