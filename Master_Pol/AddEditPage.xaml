@@ -23,7 +23,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Рейтинг" Width="150" Margin="5"/>
-                <TextBox Text="{Binding Partner_Rating}" Width="200" Height="30"/>
+                <TextBox Name="PartRaiting" Width="200" Height="30"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="ИНН " Margin="5"/>

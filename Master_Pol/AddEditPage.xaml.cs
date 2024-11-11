@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,6 +41,7 @@ namespace Master_Pol
             {
                 check = true;
                 currentPartner = SelectedPartner;
+                PartRaiting.Text = currentPartner.Partner_Rating.ToString();
                 PartnerTypeComboBox.SelectedIndex = currentPartner.Partner_Type - 1;
             }
             else
@@ -54,10 +56,12 @@ namespace Master_Pol
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            Int64 r;
+            string pattern = @"^(?!\.)(?!.*\.\.)(?!.*\.{2,})[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-]+@[A-Za-z0-9-]+\.[A-Z|a-z]{2,}$";
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrWhiteSpace(currentPartner.Partner_Name))
                 errors.AppendLine("Укажите название партнера");
-            if (string.IsNullOrWhiteSpace(currentPartner.Partner_Index))
+            if (string.IsNullOrWhiteSpace(currentPartner.Partner_Index) || currentPartner.Partner_Index.Length > 6 || currentPartner.Partner_Index.Length < 6 || !Int64.TryParse(currentPartner.Partner_Index, out r))
                 errors.AppendLine("Укажите индекс");
             if (string.IsNullOrWhiteSpace(currentPartner.Partner_Region))
                 errors.AppendLine("Укажите регион");
@@ -67,7 +71,7 @@ namespace Master_Pol
                 errors.AppendLine("Укажите улицу");
             if (string.IsNullOrWhiteSpace(currentPartner.Partner_House))
                 errors.AppendLine("Укажите дом");
-            if (string.IsNullOrWhiteSpace(currentPartner.Partner_INN))
+            if (string.IsNullOrWhiteSpace(currentPartner.Partner_INN) || currentPartner.Partner_INN.Length != 10 || !Int64.TryParse(currentPartner.Partner_INN, out r))
                 errors.AppendLine("Укажите ИНН");
             if (string.IsNullOrWhiteSpace(currentPartner.Director_Surname))
                 errors.AppendLine("Укажите фамилию директора");
@@ -77,17 +81,17 @@ namespace Master_Pol
                 errors.AppendLine("Укажите отчество директора");
             if (string.IsNullOrWhiteSpace(currentPartner.Partner_Phone))
                 errors.AppendLine("Укажите телефон");
-            if (string.IsNullOrWhiteSpace(currentPartner.Partner_Email))
+            if (string.IsNullOrWhiteSpace(currentPartner.Partner_Email) || !Regex.IsMatch(currentPartner.Partner_Email, pattern))
                 errors.AppendLine("Укажите Email");
-            if (currentPartner.Partner_Rating < 0 || currentPartner.Partner_Rating.GetType() != typeof(int))
+            if (string.IsNullOrWhiteSpace(PartRaiting.Text) || !Int64.TryParse(PartRaiting.Text, out r) || Int64.Parse(PartRaiting.Text) <0)
                 errors.AppendLine("Неверный рейтинг партнера");
-
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
 
+            currentPartner.Partner_Rating = Int32.Parse(PartRaiting.Text);
             currentPartner.Partner_Type = PartnerTypeComboBox.SelectedIndex + 1;
 
             var allPartner = Anvarov_master_polEntities.GetContext().Partner.ToList();
